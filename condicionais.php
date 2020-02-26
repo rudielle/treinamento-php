@@ -29,3 +29,7 @@ if ($nome) {
 } else {
     echo 'ALERTA: nome não informado';
 }
+
+
+
+php -S localhost:8000
