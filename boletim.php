@@ -88,11 +88,14 @@
       <td>
          <?php
          $statusmedia = 'blue';
-         if ($media >= 6) {
-            $statusmedia = 'blue';
-         } else {
+         if ($media < 6) {
             $statusmedia = 'red';
-         } ?>
+         } else if  ($media >= 6 and $media < 9) {
+               $statusmedia = 'green';
+           }else{
+                $statusmedia = 'blue';
+           }
+          ?>
          <span style="color: <?php echo $statusmedia; ?>">
             <?php echo $media; ?>
          </span>
@@ -104,11 +107,18 @@
 </table>
 <p style="color: <?= $statusmedia ?>">
    <?php
-   if ($media >= 6) {
-      echo 'Parabéns, você foi aprovado!';
-   } else {
-      echo 'Você é um lixo.';
-   }
+   if ($media >= 6 and $media < 9) {
+      echo 'Parabéns, você foi aprovado!' . PHP_EOL;
+      
+   }elseif ($media < 6) {
+      echo 'Desculpe, você foi reprovado!'. PHP_EOL;
+    
+       
+  }else {
+          echo 'Parabéns, você foi aprovado com excelência!' . PHP_EOL;
+  }
+  
+
    ?>
 </p>
 
